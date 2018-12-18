@@ -6,17 +6,17 @@ $(".guessed-number").text($guessedNumber);
 var counter = 0;
 
 // varibles assigned to images
-var numberOptions = [7,11,3,18];
+var numberOptions = Math.floor(Math.random() * 27) +1;
 
 // loop to create image for every option
-for (var i = 0; i < numberOptions.length; i++) {
+for (var i = 0; i < numberOptions; i++) {
   var dragonBall = $("<img>");
 
   dragonBall.addClass("dragon-ball");
 
   dragonBall.attr("src", "assets/images/dragonball.jpeg");
 
-  dragonBall.attr("data-ballvalue", numberOptions[i]);
+  dragonBall.attr("data-ballvalue", numberOptions);
 
   $(".images").append(dragonBall);
 }
