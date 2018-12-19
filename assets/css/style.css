@@ -25,4 +25,5 @@
 
 .score, .player-wins, .player-losses, .guessed-number {
   color: DarkGreen;
+  font-size: 25px;
 }

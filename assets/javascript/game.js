@@ -1,7 +1,7 @@
 // varibles for comp to choose from
 var $guessedNumber = Math.floor(Math.random() * 100) +52;
 
-$(".guessed-number").text($guessedNumber);
+$(".guessed-number").text("Number to guess: " + $guessedNumber);
 
 // counter for game 
 var counter = 0;
