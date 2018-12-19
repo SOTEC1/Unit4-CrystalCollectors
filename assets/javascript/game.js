@@ -7,6 +7,7 @@ $(".guessed-number").text($guessedNumber);
 var counter = 0;
 var wins = 0;
 var losses = 0;
+var gameActive = true;
 
 // reset function
 function reset() {
@@ -17,6 +18,7 @@ function reset() {
   numberOptions2 = [];
   numberOptions3 = [];
   numberOptions4 = [];
+  gameActive = true;
 
   $(".dragon-ball").each(function() {
     var randomNumber = Math.floor(Math.random() * 10);
@@ -95,7 +97,9 @@ var numberOptions4 = Math.floor(Math.random() * 13) +1;
 
 // runs when an image is clicked 
 $(".dragon-ball").on("click", function(){
-
+  if (gameActive !== true) {
+    return false;
+  } 
    
   var ballValue = ($(this).attr("data-ballValue"));
   ballValue = parseInt(ballValue);
@@ -107,7 +111,8 @@ $(".dragon-ball").on("click", function(){
   if (counter === $guessedNumber) {
     $(".score").text("You win!");
     wins++;
-    
+    $(".player-score").text("Wins: " + wins);
+    gameActive = false;
     
   }
 
@@ -115,6 +120,7 @@ $(".dragon-ball").on("click", function(){
     $(".score").text("you lose!");
     losses++;
     $(".player-score").text("Losses: " + losses);
+    gameActive = false;
   }
 
 });
