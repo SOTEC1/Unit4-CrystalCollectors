@@ -6,3 +6,23 @@
 .guessed-number {
   text-align: center;
 }
+/* \tried to make this image the background didn't work */
+/* .background {
+  background-image: url("assets/images/namek.jpeg"); */
+
+.background {
+  background-color: blanchedAlmond;
+}
+
+.rules {
+  background-color: blanchedAlmond;
+}
+
+.jumbotron {
+  background-color: green;
+  color: yellow;
+}
+
+.score, .player-wins, .player-losses, .guessed-number {
+  color: DarkGreen;
+}

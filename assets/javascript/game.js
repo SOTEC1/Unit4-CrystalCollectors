@@ -21,7 +21,7 @@ function reset() {
   gameActive = true;
 
   $(".dragon-ball").each(function() {
-    var randomNumber = Math.floor(Math.random() * 10);
+    var randomNumber = Math.floor(Math.random() * 13) +1;
 
     $(this).attr("data-ballvalue", randomNumber);
   })
@@ -111,7 +111,7 @@ $(".dragon-ball").on("click", function(){
   if (counter === $guessedNumber) {
     $(".score").text("You win!");
     wins++;
-    $(".player-score").text("Wins: " + wins);
+    $(".player-wins").text("Wins: " + wins);
     gameActive = false;
     
   }
@@ -119,7 +119,7 @@ $(".dragon-ball").on("click", function(){
   else if (counter >= $guessedNumber) {
     $(".score").text("you lose!");
     losses++;
-    $(".player-score").text("Losses: " + losses);
+    $(".player-losses").text("Losses: " + losses);
     gameActive = false;
   }
 
